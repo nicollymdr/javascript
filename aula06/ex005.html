@@ -6,11 +6,27 @@
     <title>Primeiros passos com DOM</title>
     <style>
         body {
-            background-color: rgb(26, 34, 33);
+            background-color: gray;
             color: rgb(255, 255, 255);
             font: normal 15pt Arial;
         }
-        
+
+        div {
+            background-color: red;
+            border-radius: 5pt;
+            padding: 10pt;
+            margin: 0pt;
+            width: 110pt;
+            height: 17pt;
+            text-align: center;
+            box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.39);
+        }
+
+        div:active {
+            background-color: yellow;
+            color: black;
+        }
+
         
     </style>
 </head>
@@ -18,12 +34,11 @@
     <h1 id="dom">Iniciando estudos DOM</h1>
     <p class="class">Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
-    <p class="class">Amo JavaScript!</p>
     <div id="msg">Clique em mim</div>
     <script>
         var p1 = document.getElementsByTagName('p')[1]
         window.document.write('Está escrito assim: ' + p1.innerText)
         var d = window.document.getElementById('msg')
-        d.style.background = 'red'
+
     </script>
 </body>
