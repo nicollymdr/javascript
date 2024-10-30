@@ -5,35 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somando Números</title>
     <style>
+
         body {
             font: normal 15pt Arial;
+            color: rgb(59, 59, 59);
+            background-color: rgb(105, 104, 104);
         }
 
         input {
             font: normal 15pt Arial;
+            box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.178);
         }
 
-        div {
-            margin-top: 20px;
+        div#div_soma, div#div_sub{
+            background-color: white;
+            border-radius: 5pt;
+            box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.205);
         }
+
     </style>
 </head>
 <body>
-    <h1>Somando Valores</h1>
-    <input type="number" name="txtn1" id="txtn1"> + 
-    <input type="number" name="txtn2" id="txtn2">
-    <input type="button" value="Somar" onclick="somar()">
-    <div id="res">Resultado</div>
+    <div id="div_soma">
+        <h1>Somando Valores</h1>
+        <input type="number" name="txtn1_soma" id="txtn1_soma"> +
+        <input type="number" name="txtn2_soma" id="txtn2_soma">
+        <input type="button" value="Somar" onclick="somar()">
+        <div id="res">Resultado</div>
+    </div>
+    <div id="div_sub">
+        <h2>Subtraindo Valores</h2>
+        <input type="number" name="txtn1_sub" id="txtn1_sub"> -
+        <input type="number" name="txtn2_sub" id="txtn2_sub">
+        <input type="button" value="Subtrair" onclick="subtrair()">
+        <div id="resu">Resultado</div>
+    </div>
 
     <script>
         function somar() {
-            var tn1 = window.document.getElementById('txtn1')
-            var tn2 = window.document.getElementById('txtn2')
+            var tn1 = window.document.getElementById('txtn1_soma')
+            var tn2 = window.document.getElementById('txtn2_soma')
             var res = window.document.getElementById('res')
             var n1 = Number(tn1.value)
             var n2 = Number(tn2.value)
             var s = n1 + n2
             res.innerHTML= `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>!`
+        }
+
+        function subtrair() {
+            var tn1 = window.document.getElementById('txtn1_sub')
+            var tn2 = window.document.getElementById('txtn2_sub')
+            var resu = window.document.getElementById('resu')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 - n2
+            resu.innerHTML= `A subtração entre ${n1} e ${n2} é igual a <strong>${s}</strong>!`
         }
     </script>
 </body>
