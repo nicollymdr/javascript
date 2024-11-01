@@ -3,14 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>País</title>
+    <title>Nacionalidade</title>
 </head>
 <body>
     
+    <!-- Título principal da página -->
     <h1>Você é Brasileiro?</h1>
-    <input type="text" name="pa" id="pa"> 
+
+    <!-- Campo de texto para o usuário digitar o país -->
+    <input type="text" name="pa" id="pa">
+
+    <!-- Botão que, ao ser clicado, executa a função "clicar" -->
     <input type="button" value="Verificar" onclick="clicar()">
-    <p id="mensagem"></p> 
+
+    <!-- Parágrafo onde o resultado será exibido -->
+    <p id="res"></p>
+
+    <script>
+        // Função que é executada quando o botão é clicado
+        function clicar() { 
+            // Seleciona o campo de entrada com o id "pa"
+            var p = document.querySelector('input#pa')
+            
+            // Verifica se o valor digitado é "Brasil"
+            if (p.value === 'Brasil') {
+                // Se for "Brasil", exibe que o usuário é Brasileiro
+                res.innerHTML += '<p>Você é Brasileiro!</p>'
+            } else {
+                // Caso contrário, exibe que o usuário é Estrangeiro
+                res.innerHTML += '<p>Você é Estrangeiro!</p>'
+            }
+        }
+    </script>
+
 
 </body>
 </html>
