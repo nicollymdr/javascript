@@ -7,10 +7,13 @@ function tabuada() {
         let n = Number(num.value)
         let c = 1
         tab.innerHTML = ''
+        //cria um laço de repetição que vai de 1 até 10
         while (c <= 10) {
+            //cria um novo item da lista
             let item = document.createElement('option')
             item.text = `${n} x ${c} = ${n*c}`
             item.value = `tab${c}`
+            //adiciona esse item à lista
             tab.appendChild(item)
             c++
         }
